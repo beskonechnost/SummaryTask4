@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - periodicals@localhost" uuid="c62a7546-7711-4078-9796-c16dae7b3b5f">
+    <database-info product="MySQL" version="5.7.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="periodicals"/>
+    <table name="account" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="account_number" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="balance" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8" def="MA=="/>
+      <column name="user_id1" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="user_id1" columns="user_id1" ref-table="users" ref-schema="" ref-catalog="periodicals" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="edition" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="topic" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="publisher" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="edition_id" table="subscription" schema="" catalog="periodicals" columns="edition_id"/>
+    </table>
+    <table name="lock" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="status" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="lock" table="users" schema="" catalog="periodicals" columns="lock"/>
+    </table>
+    <table name="privilege" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="privilege_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="privilege_id" table="users" schema="" catalog="periodicals" columns="privilege_id"/>
+    </table>
+    <table name="subscription" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="edition_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="edition_id" columns="edition_id" ref-table="edition" ref-schema="" ref-catalog="periodicals" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id" columns="user_id" ref-table="users" ref-schema="" ref-catalog="periodicals" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="edition_id_idx" unique="false" columns="edition_id"/>
+      <index name="user_id_idx" unique="false" columns="user_id"/>
+    </table>
+    <table name="users" schema="" catalog="periodicals" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pass" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="privilege_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="mail" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="lock" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="lock" columns="lock" ref-table="lock" ref-schema="" ref-catalog="periodicals" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="privilege_id" columns="privilege_id" ref-table="privilege" ref-schema="" ref-catalog="periodicals" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="user_id1" table="account" schema="" catalog="periodicals" columns="user_id1"/>
+      <exported-key name="user_id" table="subscription" schema="" catalog="periodicals" columns="user_id"/>
+      <index name="lock_idx" unique="false" columns="lock"/>
+      <index name="privilege_id_idx" unique="false" columns="privilege_id"/>
+    </table>
+  </data-source>
+</component>

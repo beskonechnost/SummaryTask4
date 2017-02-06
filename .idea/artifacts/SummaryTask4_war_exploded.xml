@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SummaryTask4:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SummaryTask4_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SummaryTask4/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SummaryTask4" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="apache-log4j-1.2" />
+          <element id="library" level="project" name="mysql-connector-java-5.1" />
+          <element id="library" level="project" name="jakarta-taglibs-standard-1.1" />
+          <element id="library" level="project" name="jstl" />
+          <element id="library" level="project" name="i18n_uk" />
+          <element id="library" level="project" name="activation-1.1" />
+          <element id="library" level="project" name="javamail-1.4" />
+          <element id="library" level="project" name="smtp-1.4.5" />
+          <element id="library" level="project" name="junit-4.12" />
+          <element id="library" level="project" name="jar_files" />
+          <element id="library" level="project" name="org.mockito:mockito-all:1.10.19" />
+          <element id="library" level="project" name="com.itextpdf:itextpdf:5.3.0" />
+          <element id="library" level="project" name="mockito-all-1.9.5.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

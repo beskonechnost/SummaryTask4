@@ -1,0 +1,28 @@
+<component name="libraryTable">
+  <library name="i18n_ka">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_ka.jar!/" recursive="false" type="SOURCES" />
+    <jarDirectory url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" recursive="false" type="SOURCES" />
+  </library>
+</component>

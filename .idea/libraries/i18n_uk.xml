@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="i18n_uk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/i18n_uk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
