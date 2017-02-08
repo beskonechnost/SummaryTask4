@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - periodicals@localhost" uuid="c62a7546-7711-4078-9796-c16dae7b3b5f">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>periodicals.*</schema-pattern>
+      <default-schemas>periodicals.*</default-schemas>
+    </data-source>
+  </component>
+</project>

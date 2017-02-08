@@ -1,0 +1,1 @@
+SELECT * FROM edition ORDER BY edition.name

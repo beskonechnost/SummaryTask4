@@ -1,0 +1,87 @@
+<%--===========================================================================
+Header (top area).
+===========================================================================--%>
+
+<%@ page import="ua.nure.korotkov.SummaryTask4.db.Privilege" %>
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+<%@ include file="/WEB-INF/jspf/head.jspf" %>
+
+
+<tr>
+    <td id="header">
+
+        <c:if test="${not empty user}">
+            <%--===========================================================================
+            This is the user menu.
+            ===========================================================================--%>
+
+            <div id="leftHeader">
+
+                <c:choose>
+
+                    <%--===========================================================================
+                    This way we define the ADMIN MENU.
+                    ===========================================================================--%>
+                    <c:when test="${userPrivilege.name == 'admin' }">
+                        <a href="controller?command=AdminListEditions"><fmt:message key="header.admin.editions"></fmt:message></a> &nbsp;
+                        <a href="controller?command=AllUsers"><fmt:message key="header.admin.users"></fmt:message></a> &nbsp;
+                        <a href="controller?command=AllSubscriptions"><fmt:message key="header.admin.subscriptions"></fmt:message></a> &nbsp;
+                        <a href="controller?command=AddNewEdition"><fmt:message key="header.admin.newEditions"></fmt:message></a> &nbsp;
+                    </c:when>
+
+
+                    <%--===========================================================================
+                    This way we define the USER MENU.
+                    ===========================================================================--%>
+                    <c:when test="${userPrivilege.name == 'user'}">
+                        <a href="controller?command=UserListEditions"><fmt:message key="header.user.editions"></fmt:message></a> &nbsp;
+                        <a href="controller?command=UserSubscriptions"><fmt:message key="header.user.mySubscriptions"></fmt:message></a> &nbsp;
+                        <a href="controller?command=UserAccount"><fmt:message key="header.user.myAccount"></fmt:message></a> &nbsp;
+                        <a href="controller?command=UserRefill"><fmt:message key="header.user.refillAccount"></fmt:message></a> &nbsp;
+                    </c:when>
+                </c:choose>
+
+                <%--===========================================================================
+                This way we define the settings anchor.
+                ===========================================================================--%>
+                <a href="controller?command=Settings"><fmt:message key="header.settings"></fmt:message></a> &nbsp;
+
+            </div>
+
+            <%--===========================================================================
+            This way we define the menu located at the right of header.
+            ===========================================================================--%>
+            <div id="rightHeader" >
+
+                <%--===========================================================================
+                Type user name if the user object is presented in the current session.
+                ===========================================================================--%>
+                <c:out value="${user.login}"/>
+
+                <%--===========================================================================
+                Type user role name if the user object is presented in the current session.
+                ===========================================================================--%>
+                <c:if test="${not empty userPrivilege}">
+                    <c:out value="(${userPrivilege.name})"/>
+                </c:if>
+
+                <%--===========================================================================
+                Type link to logout
+                ===========================================================================--%>
+                <a href="controller?command=logout">
+                    <fmt:message key="header.logout"></fmt:message>
+                </a>
+
+            </div>
+        </c:if>
+
+        <c:if test="${empty user and title ne 'Login'}">
+            <div id="rightHeader">
+                <a href="signOn.jsp"><fmt:message key="header.singOn"></fmt:message></a>
+                <a href="login.jsp"><fmt:message key="header.login"></fmt:message></a>
+            </div>
+        </c:if>
+
+    </td>
+</tr>
